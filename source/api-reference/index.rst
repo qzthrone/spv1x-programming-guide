@@ -1,0 +1,14 @@
+.. _api-reference:
+
+编程参考
+**********
+
+推荐按照默认顺序阅读。
+
+.. toctree::
+   :maxdepth: 2
+   
+   外设 <peripherals/index>
+   场景库 <libs/index>
+
+

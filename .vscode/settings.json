@@ -1,0 +1,7 @@
+{
+    "esbonio.sphinx.confDir": "",
+    "svn.delete.ignoredRulesForDeletedFiles": [
+        "source\\_static\\kiwi-sleep-mode-control.drawio",
+        "source\\_static\\kiwi-standby-init-wak-connection.drawio"
+    ]
+}
