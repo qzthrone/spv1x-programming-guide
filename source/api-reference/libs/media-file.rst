@@ -1,3 +1,5 @@
+.. _media-file-format:
+
 音频媒体文件调用方法
 ======================
 
@@ -25,7 +27,7 @@
   
   音频内容信息结构体
 
-   .. c:member:: uint32_t attribute
+   .. c:member:: player_file_attribute_t attribute
 
      音频内容格式，如MP3、S1A、SILK、MIDI等，通过预设的枚举定义赋值和区分
 
@@ -40,6 +42,19 @@
    .. c:member:: uint32_t size
 
      音频内容的字节数大小
+
+  .. c:enum:: player_file_attribute_t
+
+  播放文件属性枚举，资源文件参数 attribute 值选择范围
+
+  - *FileAttribute_None*: 值为0，资源文件，结束属性
+  - *FileAttribute_MP3*: 值为1，资源文件为MP3，不区分采样率
+  - *FileAttribute_S1A*: 值为2，资源文件为S1A，不区分采样率
+  - *FileAttribute_MIDI*: 值为3，资源文件为midi文件
+  - *FileAttribute_ADPCM*: 值为14，资源文件为ADPCM文件
+  - *FileAttribute_SILK*: 值为15，资源文件为silk，不区分采样率
+
+
 
  - 用户程序通过全局符号 ``__media_file_addr`` 获得音频资源文件 `media.dat` 在SoC寻址空间的绝对起始地址，
    该地址一般被映射至L2-CACHED NOR FLASH空间，用户可以根据需要，套用SDK的宏定义，将其重映射至其他NOR FLASH空间进行访问。
@@ -70,7 +85,7 @@
   extern char __media_file_addr;
   extern char __media_file_size;
   
-  /******************************获取资源文件总音频数量**********************************/
+  /*********************获取资源文件总音频数量*************************/
   uint32_t addr,size;
   addr = NORC_DATA_UNCACHE_SINGLE((uint32_t)&__media_file_addr);
   size = (uint32_t)&__media_file_size;
@@ -96,7 +111,7 @@
 
   获取某一音频文件信息
 
-  /******************************获取某一音频文件信息**********************************/
+  /**********************获取某一音频文件信息************************/
   uint32_t addr,size_all,len;
   addr = NORC_DATA_UNCACHE_SINGLE((uint32_t)&__media_file_addr);
   size_all =  (uint32_t)&__media_file_size;
