@@ -17,9 +17,6 @@
  - CPU与常规外设单元关闭，其内部寄存器状态保留(Retention)。
  - SRAM与L2 Cache数据保留。
 
-.. image:: ../../_static/kiwi-lpm-state-standby-standby.png
- :align: center
-
 待机模式的进入
 -------------------------------
 

@@ -17,9 +17,6 @@
  - CPU与常规外设单元掉电，内部寄存器状态丢失。
  - SRAM与L2 Cache掉电，数据内容丢失。
 
-.. image:: ../../_static/kiwi-lpm-state-standby-hibernate.png
- :align: center
-
 休眠模式的进入
 -------------------------------
 
