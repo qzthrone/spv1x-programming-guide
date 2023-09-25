@@ -21,7 +21,7 @@
 
 .. c:struct:: player_init_parameter_t
 
-  初始化参数，player_xxx_init()输入参数,midi除外
+  初始化参数，player_xxx_init()输入参数，midi除外
 
    .. c:member:: void* file_info
 
@@ -65,11 +65,11 @@
 
    .. c:member:: uint32_t resample_en :1
 
-    播放上采样。置位有效。注意，8khz sik，8khz s1a一定上采样，此位无效。32khz mp3 一定不上采样，此位无效。
+    播放上采样。置位有效。注意，8KHZ SILK，8KHZ S1A一定上采样，此位无效。32KHZ MP3 一定不上采样，此位无效。
 
    .. c:member:: uint32_t tsps_en :1
 
-    变速变调，置位有效。当值为0，初始化参数，speed和pitch将无效。注意32khz mp3和silk不支持变速变调，此位无效。
+    变速变调，置位有效。当值为0，初始化参数，speed和pitch将无效。注意32KHZ MP3和SILK不支持变速变调，此位无效。
   
 
 .. c:enum:: player_music_cmd_t

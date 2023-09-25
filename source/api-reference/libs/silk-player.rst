@@ -119,7 +119,7 @@ API说明
 注意事项
 -------------------------
 
- 1. 源码中需要先定义,音频播放器的必须品中 player_dec_sequence_t ,player_file_attribute_t ,player_music_cmd_t 枚举和 dec_info_t 结构体，否者编译错误
+ 1. 源码中需要先定义,音频播放器必需数据结构中的player_dec_sequence_t ,player_file_attribute_t ,player_music_cmd_t 枚举和 dec_info_t 结构体，否者编译错误
  2. 播放器运行过程占用DSM单元，已经指定的一路DMA3通道，以及软件中断(MSIP)。播放器去初始化后，资源占用将被释放。
  3. 提供两个SILK解码播放库，其中名字中不带-vfs为flash播放库，带有-vfs为同时支持sd卡和flash播放库。
  

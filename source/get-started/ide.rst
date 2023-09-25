@@ -110,3 +110,28 @@ SPV1x SDK说明
   .. image:: ../_static/kiwi-IDE-setting-refresh.png
     :align: center
 
+用户工程重命名（等效：新建用户工程）
+------------------------------------------
+
+我们推荐以重命名SDK提供的模板工程或者EVB Demo工程的方式，生成用户自己的初始工程。
+
+此种方式可以确保将SDK工程中已有的工具链相关推荐配置完全保留，如目标处理器设置、编译器选项和链接器脚本等重要参数。
+
+用户可以通过以下两种方式对工程重命名：
+
+ - 方式1： **通过 ProjectRename 工具进行转换**
+  
+  1. 在SDK下属tool文件夹中找到“工程重命名工具”，执行其中ProjectRename.exe，按照程序提示进行操作。
+
+  .. image:: ../_static/kiwi-tool-projectrename.png
+    :align: center
+    :width: 512 px
+
+ - 方式2： **手动修改工程设置文件**
+
+  .. image:: ../_static/kiwi-tool-projectfile.png
+    :align: center
+
+  1. 使用文本编辑器，打开工程文件夹根目录下".project"文件，将其中<name>一栏键值修改为新工程的名称，保存文件。
+  2. 如果该工程文件夹下已存在"Debug"子文件夹，请将其删除。
+  3. （可选但推荐）将该工程文件夹名称修改为新工程名。
