@@ -1,0 +1,8 @@
+推荐参考设计
+======================
+
+.. toctree::
+   :maxdepth: 1
+
+   [SPV120A4][ESOP8]语音控制台灯 <120a4-esop8-tablelight>
+   [SPV120A4][ESOP8]语音控制小夜灯 <120a4-esop8-nightlight>

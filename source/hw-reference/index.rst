@@ -4,7 +4,9 @@
 **********
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
-   SPV1x Evaluation Board (EVB)说明 <evb-hw>
-   JTAG调试器接口参考设计 <jtag-connection>
+   SPV1x 选型指南 <pick-your-target/index>
+   SPV1x 系列芯片规格书 <soc-brief/index> 
+   官方硬件开发工具 <official-dev-hw/index>
+   推荐参考设计 <official-ref-design/index>
