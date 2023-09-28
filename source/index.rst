@@ -6,6 +6,10 @@
 SPV1x编程指南
 ===================================================
 
+.. note::
+    - SPV1x SDK当前最新版本为 **v1.0.0-rc-09262023** ，请联系我司获取，并了解版本迭代内容：:ref:`changelog_sdk`。
+    - 请关注 :ref:`changelog_pg`，及时了解编程手册更新内容。
+
 本门户为针对珠海普林芯驰科技有限公司 "SPV1x" SoC家族系列的文档中心， 
 用于向广大用户提供及时全面的SoC编程指南信息。
 
@@ -47,3 +51,5 @@ SoC SPV1x是我司自主开发的语音播报类芯片系列，主要应用于�
    用户指南 <user-guide/index>
    软件参考 <api-reference/index>
    硬件参考 <hw-reference/index>
+   SDK版本迭代记录 <changelog-sdk>
+   编程手册版本迭代记录 <changelog-pg>
