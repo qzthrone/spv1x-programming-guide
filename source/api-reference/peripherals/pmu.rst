@@ -23,10 +23,7 @@ PMU根据使用方向，可以划分为以下典型场景：
 
  **A. 对SoC内部LDO进行控制调节**
 
- .. image:: ../../_static/kiwi-lpm-state-standby-active.png
-  :align: center
-
- 如上图所示，SoC SPV1x面向应用方案提供5路片上电源，分别由不同的低压降稳压器(LDO)对Vcc外部输入电压转化获得，
+ SoC SPV1x面向应用方案提供5路片上电源，分别由不同的低压降稳压器(LDO)对Vcc外部输入电压转化获得，
  用于供给片上外设模块，并按需通过IO引脚向片外设备输出供电。
 
  .. image:: ../../_static/kiwi-pmu-ldo-description.png
