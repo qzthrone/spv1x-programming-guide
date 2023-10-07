@@ -10,5 +10,6 @@
    
    外设 <peripherals/index>
    场景库 <libs/index>
+   补充功能 <supplement/index>
 
 
