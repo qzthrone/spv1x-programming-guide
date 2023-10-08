@@ -16,8 +16,8 @@ SPV1x编程指南
 .. image:: _static/kiwi-scenarios.png
   :align: center
 
-SoC SPV1x是我司自主开发的语音播报类芯片系列，主要应用于玩具产品。SPV1x以出色的播报能力，以及内建的强大数字处理单元，
-能够进行高品质音频解码，能够支持16通道MIDI音频解码。SPV1x拥有12bit高性能ADC，能够采集MIC音频数据，并执行音频编码，离线语音识别等任务。
+SoC SPV1x是我司自主开发的SoC系列，主要应用于消费类玩具产品。SPV1x依托芯来科技N200系列RISC-V CPU内核和自研的数字音频模块，
+能够进行高品质音频解码播放，支持16通道MIDI音频解码。SPV1x拥有12bit高性能ADC，能够采集MIC音频数据，并执行音频编码，离线语音识别等任务。
 
 .. image:: _static/firepower.jpg
   :align: center
