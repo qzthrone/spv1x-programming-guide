@@ -45,10 +45,6 @@
 低成本固件下载器(ODT Loader(CH340E))说明
 ====================================================
 
-.. image:: ../../_static/sch-odt-loader-ch340e.png
-   :align: center
-   :width: 512 px
-
 .. image:: ../../_static/odt-loader-ch340e.png
    :align: center
    :width: 512 px
@@ -86,10 +82,3 @@
   3. 由于CH340E固定工作在3.3V模式，因此SPV1x的IO电压也需要在3.3V附近。建议下载时SPV1x的VCC供电不要低于3.2V。
   4. 当SPV1x在断电前处于低功耗模式时（特别是休眠模式），断电所需的时间会较长。
 
-ODT Loader(CH340E) PCB Gerber文件下载：
-
- - :download:`zip格式 <../../_static/Gerber_ODT_Loader_CH340E.zip>`
-
-ODT Loader(CH340E) PCB BOM清单文件下载：
-
- - :download:`xlsx格式 <../../_static/BOM_ODT_Loader_CH340E.xlsx>`
