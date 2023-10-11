@@ -6,9 +6,9 @@
 SPV1x编程指南
 ===================================================
 
-.. note::
+.. important::
     - 请关注 :ref:`changelog_pg`，及时了解编程手册更新内容。
-    - SPV1x SDK当前最新版本为 **v1.0.0-rc-09262023** ，详情见 :ref:`changelog_sdk`。
+    - SPV1x SDK当前最新版本为 **1.0.0-rc-10112023-hotfix** ，详情见 :ref:`changelog_sdk`。
     - SPV1x 固件烧录程序 ODT 当前最新版本为 **v1.0.0-rc-10102023** :download:`点此下载 <_static/spv1x_odt_v1.0.0.zip>`。
 
 
