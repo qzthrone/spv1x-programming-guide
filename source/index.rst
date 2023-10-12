@@ -6,6 +6,8 @@
 SPV1x编程指南
 ===================================================
 
+Bug反馈/新功能需求 请发送至 spv1x.feedback@spacetouch.co，感谢广大新老用户不吝赐教。
+
 .. important::
     - 请关注 :ref:`changelog_pg`，及时了解编程手册更新内容。
     - SPV1x SDK当前最新版本为 **1.0.0-rc-10112023-hotfix** ，详情见 :ref:`changelog_sdk`。
