@@ -45,7 +45,7 @@
 低成本固件下载器(ODT Loader(CH340E))说明
 ====================================================
 
-.. image:: ../../_static/kiwi-odt-loader-CH340.JPG
+.. image:: ../../_static/kiwi-odt-loader-CH340.png
    :align: center
    :width: 512 px
 
