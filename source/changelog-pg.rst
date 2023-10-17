@@ -3,6 +3,12 @@
 SPV1x 编程手册 版本迭代记录
 =============================
 
+- **10-17-2023** ：
+
+ + [:ref:`hw-reference`][:ref:`soc-package`] : 
+
+  + 追加封装说明：ESOP-8 SPV1x0A4
+
 - **10-07-2023** ：
 
  + [:ref:`api-reference`][:ref:`supplement-reference`] : 
