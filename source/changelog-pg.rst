@@ -3,6 +3,12 @@
 SPV1x 编程手册 版本迭代记录
 =============================
 
+- **10-18-2023** ：
+
+ + [:ref:`hw-reference`][:ref:`soc-package`] : 
+
+  + 追加封装说明：SSOP-24 SPV1x2A4
+
 - **10-17-2023** ：
 
  + [:ref:`hw-reference`][:ref:`soc-package`] : 
