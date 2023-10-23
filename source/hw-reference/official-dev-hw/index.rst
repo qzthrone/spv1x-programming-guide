@@ -7,7 +7,7 @@
    :maxdepth: 1
 
    SPV1x Evaluation Board (EVB)说明 <evb-hw>
-   SPV1x SSOP24 Development Board说明 <ssop24-dev-hw>
-   SPV1x ESOP8 Development Board说明 <esop8-dev-hw>
+   SPV1x SSOP24 Dev Board说明 <ssop24-dev-hw>
+   SPV1x ESOP8 Dev Board说明 <esop8-dev-hw>
    JTAG调试器(Straw Mini)说明 <jtag-connection>
    固件下载器(ODT Loader)说明 <odt-loader>

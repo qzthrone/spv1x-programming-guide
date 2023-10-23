@@ -1,6 +1,6 @@
 .. _ssop24-dev-board:
 
-SPV1x SSOP24 Development Board说明
+SPV1x SSOP24 Dev Board说明
 ===================================
 
 SPV1x SSOP24 开发板原理图下载链接： 
