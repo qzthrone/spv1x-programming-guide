@@ -3,6 +3,12 @@
 SPV1x 编程手册 版本迭代记录
 =============================
 
+- **10-23-2023** ：
+
+ + [:ref:`hw-reference`][:ref:`official_dev_kit`] : 
+
+  + 追加：:ref:`esop8-dev-board`，提供原理图和说明书。
+
 - **10-18-2023** ：
 
  + [:ref:`hw-reference`][:ref:`soc-package`] : 
