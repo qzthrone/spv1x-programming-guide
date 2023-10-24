@@ -51,16 +51,16 @@ SPV1x SDK说明
 .. image:: ../_static/kiwi-import-project-1.png
   :align: center
 
-- 点击下拉菜单 **File**，选择 **Import**
-- 在弹出窗口中，选择 **Existing Projects into workspace**
+- 点击下拉菜单 :guilabel:`File` ，选择 :guilabel:`Import`
+- 在弹出窗口中，选择 :guilabel:`Existing Projects into workspace`
 
 .. image:: ../_static/kiwi-import-project-2.png
   :align: center
 
-- 通过 **Select root directory** 选择待导入工程的根目录。
-- 确保 **Projects** 一栏中勾选对应工程名。
+- 通过 :guilabel:`Select root directory` 选择待导入工程的根目录。
+- 确保 :guilabel:`Projects`  一栏中勾选对应工程名。
 - **不要** 勾选 "Copy projects into workspace"。
-- 点击 **Finish**。
+- 点击 :guilabel:`Finish` 。
 
 用户工程模版说明
 ------------------
@@ -94,18 +94,19 @@ SPV1x SDK说明
   :width: 512 px
 
 - 在 **Project Explorer** 中右键点击导入的工程名。
-- (推荐)首先执行一次 **Clean Project**。
-- 执行 **Build Project**，等待其完成。
+- (推荐)首先执行一次 :guilabel:`Clean Project` 。
+- 执行 :guilabel:`Build Project` ，等待其完成。
 
 .. image:: ../_static/kiwi-project-bin.png
   :align: center
   :width: 512 px
 
-- 在当前工程下将生成 **Debug** 文件夹，如未出现请点击工程名，执行 **Refresh** 。
+- 在当前工程下将生成 **Debug** 文件夹，如未出现请点击工程名，执行 :guilabel:`Refresh` 。
 - **Debug** 文件夹下扩展名".bin"文件即为可烧录SoC固件镜像。
 
 .. note::
-  推荐通过IDE下拉菜单 **Window** -> **Preferences** -> **General** -> **Workspace** 下开启如图选项，实现编译后自动刷新工程文件夹。
+  推荐通过IDE下拉菜单 
+  :menuselection:`Window --> Preferences --> General --> Workspace` 下开启如图选项，实现编译后自动刷新工程文件夹。
   
   .. image:: ../_static/kiwi-IDE-setting-refresh.png
     :align: center
