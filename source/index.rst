@@ -9,7 +9,7 @@ SPV1x编程指南
 Bug反馈/新功能需求 请发送至 spv1x.feedback@spacetouch.co，感谢广大新老用户不吝赐教。
 
 .. important::
-    - 请关注 :ref:`changelog_pg`，及时获取新内容，最近更新于 **10-23-2023**。
+    - 请关注 :ref:`changelog_pg`，及时获取新内容，最近更新于 **10-25-2023**。
     - SPV1x SDK当前最新版本为 **1.0.2-rc-10242023** ，详情见 :ref:`changelog_sdk`。
     - SPV1x 固件烧录程序 ODT 当前最新版本为 **v1.0.0-rc-10102023** :download:`点此下载 <_static/spv1x_odt_v1.0.0.zip>`。
 
