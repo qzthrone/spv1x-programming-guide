@@ -12,18 +12,22 @@ SPV1x的按键API提供IO按键，AD按键和MATRIX按键（矩阵按键）功�
 
 按键事件对应的消息中，使用2个参数来表示具体的事件信息： `id` 字段表示哪一个按键， `val` 字段表示该按键的状态。按键状态在  `key.h` 中以枚举的形式提供，后续的内容将描述这些状态的产生时机。
 
-.. c:enum:: KEY_STA_Type
+.. c:enum:: key_status_t
 
   按键的状态枚举定义。
 
-   - *KEY_STA_NONE*：未使用。
-   - *KEY_STA_SHORT*：按键短按。
-   - *KEY_STA_SHORT_UP*：按键短按抬起。
-   - *KEY_STA_LONG*：按键长按。
-   - *KEY_STA_HOLD*：按键保持。
-   - *KEY_STA_LONG_UP*：按键长按抬起。
-   - *KEY_STA_DOUBLE*：按键双击。
+   - *Key_Status_None*：未使用。
+   - *Key_Status_Short*：按键短按。
+   - *Key_Status_Short_Up*：按键短按抬起。
+   - *Key_Status_Long*：按键长按。
+   - *Key_Status_Hold*：按键保持。
+   - *Key_Status_Long_Up*：按键长按抬起。
+   - *Key_Status_Double*：按键双击。
 
+ .. note::
+  
+  早期版本的按键API枚举类型使用的全大写，如 `KEY_STA_NONE` 、 `KEY_STA_SHORT` 。
+  在新版本的API中，枚举类型变量命名统一推荐为：单词首字母大小，单词之间用下划线分隔，意义明确的缩写单词可以保持为全大写。
 
 按键API的全局配置
 -------------------------
@@ -40,25 +44,25 @@ SPV1x的按键API提供IO按键，AD按键和MATRIX按键（矩阵按键）功�
 
  2.	按键双击功能配置
 
-  (1) 双击功能使能配置
+  (1). 双击功能使能配置
 
   .. code-block:: c
 
-    #define KEY_DOUBLE_CLICK_EN		1	//按键双击功能使能
+    #define KEY_DOUBLE_CLICK_EN		(1)	//双击按键使能配置
 
   双击功能会消耗额外的RAM，如果实际不会用到双击功能，请设置为关闭。
 
-  (2) 双击间隔时间配置
+  (2). 双击间隔时间配置
 
   .. code-block:: c
 
-   #define KEY_DOUBLE_CLICK_CNT    35 //35*10ms
+   #define KEY_DOUBLE_CLICK_CNT    (35) //双间隔时间，35*10ms
 
-  双击间隔。在第一次按键短按并松开后，如果第二次按键在 `KEY_DOUBLE_CLICK_CNT` 设定的时间内短按并松开，就会产生按键的双击事件。
+  双击间隔。在第一次按键短按并松开后，如果第二次按键在 `KEY_DOUBLE_CLICK_CNT` 设定的时间内短按并松开，就会产生按键的双击事件 `Key_Status_Double` 。
 
  3. 按键时间阈值配置
 
-  (1) 按键消抖时间配置
+  (1). 按键消抖时间配置
 
   .. code-block:: c
 
@@ -66,29 +70,29 @@ SPV1x的按键API提供IO按键，AD按键和MATRIX按键（矩阵按键）功�
 
   `KEY_BASE_CNT` 用于设定按键消抖时间。
 
-  (2) 按键短按时间配置
+  (2). 按键短按时间配置
 
   .. code-block:: c
 
    #define KEY_SHORT_CNT	(3)		//短按生效时间，3*10ms
 
-  `KEY_SHORT_CNT` 用于设定按键短按生效时间。当按键的按下时间达到 `KEY_SHORT_CNT` 设定的时间时，将产生按键短按事件 `KEY_STA_SHORT` 。
+  `KEY_SHORT_CNT` 用于设定按键短按生效时间。当按键的按下时间达到 `KEY_SHORT_CNT` 设定的时间时，将产生按键短按事件 `Key_Status_Short` 。
 
-  (3) 按键长按时间配置
+  (3). 按键长按时间配置
 
   .. code-block:: c
 
     #define KEY_LONG_CNT	(75)	//长按生效时间，75*10ms
 
-  `KEY_LONG_CNT` 用于设定按键长按生效时间。当按键的按下时间达到 `KEY_LONG_CNT` 设定的时间时，将产生按键长按事件 `KEY_STA_LONG` 。
+  `KEY_LONG_CNT` 用于设定按键长按生效时间。当按键的按下时间达到 `KEY_LONG_CNT` 设定的时间时，将产生按键长按事件 `Key_Status_Long` 。
 
-  (4) 按键保持时间配置
+  (4). 按键保持时间配置
 
   .. code-block:: c
 
    #define KEY_HOLD_CNT	(15)	//保持生效时间，15*10ms
 
-  `KEY_HOLD_CNT` 用于设定按键保持生效时间。当按键的按下时间达到 `KEY_LONG_CNT+ KEY_HOLD_CNT` 设定的时间后，按键保持就会激活，并发送按键保持事件，此后，按键API将以 `KEY_HOLD_CNT` 设定的时间周期性发送按键保持事件。按键保持事件可用实现按键的连发（机打）功能。
+  `KEY_HOLD_CNT` 用于设定按键保持生效时间。当按键的按下时间达到 `(KEY_LONG_CNT+ KEY_HOLD_CNT)` 设定的时间后，按键保持就会激活，并发送按键保持事件 `Key_Status_Hold` ，此后，按键API将以 `KEY_HOLD_CNT` 设定的时间周期性发送按键保持事件。按键保持事件可用实现按键的连发（机打）功能。
 
  .. note::
 
@@ -96,23 +100,22 @@ SPV1x的按键API提供IO按键，AD按键和MATRIX按键（矩阵按键）功�
 
   1. 当按键抬起前，其按下时间小于 `KEY_SHORT_CNT` 设定的时间时，不会产生抬起事件。
 
-  2. 当按键抬起前，其按下时间大于等于 `KEY_SHORT_CNT` 设定的时间，但小于 `KEY_LONG_CNT` 设定的时间时，将产生短按抬起事件 `KEY_STA_SHORT_UP` 。
+  2. 当按键抬起前，其按下时间大于等于 `KEY_SHORT_CNT` 设定的时间，但小于 `KEY_LONG_CNT` 设定的时间时，将产生短按抬起事件 `Key_Status_Short_Up` 。
 
-  3. 当按键抬起前，其按下时间大于等于 `KEY_LONG_CNT` 设定的时间，将产生长按抬起事件 `KEY_STA_LONG_UP` 。
+  3. 当按键抬起前，其按下时间大于等于 `KEY_LONG_CNT` 设定的时间，将产生长按抬起事件 `Key_Status_Long_Up` 。
 
  4. 按键类型使能配置
 
  .. code-block:: c
 
-  #define KEY_IO_EN             1   ///<IO按键使能
-  #define KEY_AD_EN             1   ///<AD按键使能
-  #define KEY_MATRIX_EN         0   ///<矩阵按键使能
-  #define KEY_IR_EN             0   ///<IR按键使能
-  #define KEY_TOUCH_EN          0   ///<触摸按键使能
+  #define KEY_IO_EN             (1)   ///<IO按键使能
+  #define KEY_AD_EN             (1)   ///<AD按键使能
+  #define KEY_MATRIX_EN         (0)   ///<矩阵按键使能
+  #define KEY_IR_EN             (0)   ///<IR按键使能
 
 .. note::
 
- 目前IR按键和TOUCH按键还未实现。
+ 目前IR按键还未实现。
 
 
 IO按键
@@ -141,17 +144,17 @@ IO按键
  //IO按键引脚和键值映射表
  static const uint8_t pins2bitmap[] =
  {
- 	KEY_VAL_0,
- 	KEY_VAL_1,
- 	KEY_VAL_2,
- 	KEY_VAL_3,
- 	KEY_VAL_4,
- 	KEY_VAL_5,
- 	KEY_VAL_6,
- 	KEY_VAL_7,
- 	KEY_VAL_8,
- 	KEY_VAL_9,
- 	KEY_VAL_10
+ 	Key_Val_0,
+ 	Key_Val_1,
+ 	Key_Val_2,
+ 	Key_Val_3,
+ 	Key_Val_4,
+ 	Key_Val_5,
+ 	Key_Val_6,
+ 	Key_Val_7,
+ 	Key_Val_8,
+ 	Key_Val_9,
+ 	Key_Val_10
  };
 
 用户只需要在 `iokey_pins[]` 中配置用到的引脚，在 `pins2bitmap[]` 中配置对应的事件ID即可。
@@ -171,14 +174,21 @@ AD按键
 
  可以作为AD按键使用的引脚如下：
  
- (1) GPADC_Signal_GPIO00
- (2) GPADC_Signal_GPIO01
- (3) GPADC_Signal_GPIO02
- (4) GPADC_Signal_GPIO03
- (5) GPADC_Signal_GPIO04
- (6) GPADC_Signal_GPIO24
- (7) GPADC_Signal_GPIO25
- (8) GPADC_Signal_GPIO26
+ (1). GPADC_Signal_GPIO00
+
+ (2). GPADC_Signal_GPIO01
+
+ (3). GPADC_Signal_GPIO02
+
+ (4). GPADC_Signal_GPIO03
+
+ (5). GPADC_Signal_GPIO04
+
+ (6). GPADC_Signal_GPIO24
+
+ (7). GPADC_Signal_GPIO25
+ 
+ (8). GPADC_Signal_GPIO26
 
  2. 配置AD按键的数量和电阻值
 
@@ -252,9 +262,9 @@ AD按键
 
   static const uint8_t adkey_pins2bitmap[] =
   {
-    KEY_VAL_11,
-    KEY_VAL_12,
-    KEY_VAL_13,
+    Key_Val_11,
+    Key_Val_12,
+    Key_Val_13,
   };
 
  当AD按键按下时，按键API会从 `adkey_pins2bitmap[]` 获取对应按键的事件ID。
@@ -265,8 +275,8 @@ AD按键
 
   #define ADKEY_MARGIN      (200)
 
- ADC值的裕度需要根据实际项目来调整。
  假定按键A按下后，ADC的理论值为 `val` ，那么实际的ADC值只要满足大于 `(val - ADKEY_MARGIN)` 且小于 `(val + ADKEY_MARGIN)` ，就会认为按键A按下。
+ ADC值的裕度需要根据实际项目来调整。过大的 `ADKEY_MARGIN` 会使得不同按键ADC值的判断范围出现重叠，从而导致AD按键输出不正确的按键事件。
 
  .. note::
 
@@ -274,7 +284,7 @@ AD按键
 
   2. 不同按键分压后的电压值应尽量分散，以充分利用ADC的量程，增加抗干扰能力。
 
-  3. AD按键不适合做多键同时检测。
+  3. AD按键不适合做多键同时按下情形的检测。
 
 矩阵按键
 -------------------------
@@ -297,20 +307,21 @@ AD按键
  	GPIO_Pin_15,	//COM2
  	GPIO_Pin_21,	//COM3
  };
+
  static const uint8_t pins2bitmap[] =
  {
- 	KEY_VAL_0,
- 	KEY_VAL_1,
- 	KEY_VAL_2,
- 	KEY_VAL_3,
- 	KEY_VAL_4,
- 	KEY_VAL_5,
- 	KEY_VAL_6,
- 	KEY_VAL_7,
- 	KEY_VAL_8,
- 	KEY_VAL_9,
- 	KEY_VAL_10,
- 	KEY_VAL_11,
+ 	Key_Val_0,
+ 	Key_Val_1,
+ 	Key_Val_2,
+ 	Key_Val_3,
+ 	Key_Val_4,
+ 	Key_Val_5,
+ 	Key_Val_6,
+ 	Key_Val_7,
+ 	Key_Val_8,
+ 	Key_Val_9,
+ 	Key_Val_10,
+ 	Key_Val_11,
  };
 
 
@@ -318,16 +329,16 @@ AD按键
 
 以上面的配置为例， `pins2bitmap[]` 中，事件ID与按键对应关系为：
 
-1. `pins2bitmap[0]` 对应 `COM0.SEG0` ;
-2. `pins2bitmap[1]` 对应 `COM0.SEG1` ;
-3. `pins2bitmap[2]` 对应 `COM0.SEG2` ;
-4. `pins2bitmap[3]` 对应 `COM1.SEG0` ;
-5. `pins2bitmap[4]` 对应 `COM1.SEG1` ;
-6. `pins2bitmap[5]` 对应 `COM1.SEG2` ;
-7. `pins2bitmap[6]` 对应 `COM2.SEG0` ;
-8. `pins2bitmap[7]` 对应 `COM2.SEG1` ;
-9. `pins2bitmap[8]` 对应 `COM2.SEG2` ;
-10. `pins2bitmap[9]` 对应 `COM3.SEG0` ;
-11. `pins2bitmap[10]` 对应 `COM3.SEG1` ;
-12. `pins2bitmap[11]` 对应 `COM3.SEG2` ;
+1. `pins2bitmap[0]` 对应 `COM0.SEG0` ；
+2. `pins2bitmap[1]` 对应 `COM0.SEG1` ；
+3. `pins2bitmap[2]` 对应 `COM0.SEG2` ；
+4. `pins2bitmap[3]` 对应 `COM1.SEG0` ；
+5. `pins2bitmap[4]` 对应 `COM1.SEG1` ；
+6. `pins2bitmap[5]` 对应 `COM1.SEG2` ；
+7. `pins2bitmap[6]` 对应 `COM2.SEG0` ；
+8. `pins2bitmap[7]` 对应 `COM2.SEG1` ；
+9. `pins2bitmap[8]` 对应 `COM2.SEG2` ；
+10. `pins2bitmap[9]` 对应 `COM3.SEG0` ；
+11. `pins2bitmap[10]` 对应 `COM3.SEG1` ；
+12. `pins2bitmap[11]` 对应 `COM3.SEG2` 。
 

@@ -6,4 +6,4 @@
 .. toctree::
    :maxdepth: 1
    
-   按键 <key>
+   按键 Keys <key>
