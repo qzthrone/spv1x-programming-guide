@@ -3,16 +3,16 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-SPV1x编程指南
+SPV1x 编程指南
 ===================================================
 
 Bug反馈/新功能需求 请发送至 spv1x.feedback@spacetouch.co，感谢广大新老用户不吝赐教。
 
 .. important::
-    - 请关注 :ref:`changelog_pg`，及时获取新内容，最近更新于 **10-25-2023**。
-    - SPV1x SDK当前最新版本为 **1.0.3-rc-10262023** ，详情见 :ref:`changelog_sdk`。
-    - SPV1x 固件烧录程序 ODT 当前最新版本为 **v1.0.0-rc-10102023** :download:`点此下载 <_static/spv1x_odt_v1.0.0.zip>`。
-
+    - 编程指南更新于 **01-25-2024**，详情见 :ref:`changelog_pg`。
+    - SDK最新版本： **1.2.4-rc-01252024** (:download:`点此下载 <https://gitee.com/spacetouch-zh/sdk-spv1x/repository/archive/master.zip>`)，详情见 :ref:`changelog_sdk`。
+    - 固件烧录程序 ODT 最新版本： **v1.3.0** 。
+    - 音频转换和打包工具 ACT 最新版本 **v1.2.0**。
 
 本门户为针对 `珠海普林芯驰科技有限公司 <http://www.spacetouch.co/>`_ "SPV1x" SoC家族系列的文档中心， 
 用于向广大用户提供及时全面的SoC编程指南信息。

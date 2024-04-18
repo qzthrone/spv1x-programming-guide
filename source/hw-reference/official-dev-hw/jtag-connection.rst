@@ -1,6 +1,10 @@
 JTAG调试器(Straw Mini)说明
 ==========================
 
+.. seealso:: 
+    - 软件使用详情，请参考 :ref:`jtag-debug-workflow`。
+
+
 .. image:: ../../_static/kiwi-straw-debugger.png
    :align: center
    :width: 512 px

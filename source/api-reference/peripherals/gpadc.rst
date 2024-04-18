@@ -126,25 +126,25 @@ API说明
 
     GPADC采集的信号
 
-    - *GPADC_Signal_GPIO00*: 信号来至GPIO00
-	- *GPADC_Signal_GPIO01*: 信号来至GPIO01
-	- *GPADC_Signal_GPIO02*: 信号来至GPIO02
-	- *GPADC_Signal_GPIO03*: 信号来至GPIO03
-	- *GPADC_Signal_GPIO04*: 信号来至GPIO04
-	- *GPADC_Signal_GPIO24*: 信号来至GPIO24
-	- *GPADC_Signal_GPIO25*: 信号来至GPIO25
-	- *GPADC_Signal_GPIO26*: 信号来至GPIO26
-	- *GPADC_Signal_VERF1P5*: 信号来至VERF1.5V
-	- *GPADC_Signal_DVDD*: 信号来至DVDD
-	- *GPADC_Signal_AVCC*: 信号来至AVCC
-	- *GPADC_Signal_IOVCC*: 信号来至IOVCC
-	- *GPADC_Signal_AGND*: 信号来至AGND
-	- *GPADC_Signal_GPIO22*: 信号来至GPIO22(耐压5V)
-	- *GPADC_Signal_GPIO23*: 信号来至GPIO23(耐压5V)
-	- *GPADC_Signal_VCC*: 信号来至VCC
-	- *GPADC_Signal_MICP*: 信号来至MICP
-	- *GPADC_Signal_MICN*: 信号来至MICN
-    - *GPADC_Signal_MICPN*: 信号来至MICN和MICP
+    - *GPADC_Signal_GPIO00*: 信号来自GPIO00
+	- *GPADC_Signal_GPIO01*: 信号来自GPIO01
+	- *GPADC_Signal_GPIO02*: 信号来自GPIO02
+	- *GPADC_Signal_GPIO03*: 信号来自GPIO03
+	- *GPADC_Signal_GPIO04*: 信号来自GPIO04
+	- *GPADC_Signal_GPIO24*: 信号来自GPIO24
+	- *GPADC_Signal_GPIO25*: 信号来自GPIO25
+	- *GPADC_Signal_GPIO26*: 信号来自GPIO26
+	- *GPADC_Signal_VERF1P5*: 信号来自VERF1.5V
+	- *GPADC_Signal_DVDD*: 信号来自DVDD
+	- *GPADC_Signal_AVCC*: 信号来自AVCC
+	- *GPADC_Signal_IOVCC*: 信号来自IOVCC
+	- *GPADC_Signal_AGND*: 信号来自AGND
+	- *GPADC_Signal_GPIO22*: 信号来自GPIO22(耐压5V)
+	- *GPADC_Signal_GPIO23*: 信号来自GPIO23(耐压5V)
+	- *GPADC_Signal_VCC*: 信号来自VCC(耐压5V)
+	- *GPADC_Signal_MICP*: 信号来自MICP
+	- *GPADC_Signal_MICN*: 信号来自MICN
+    - *GPADC_Signal_MICPN*: 信号来自MICN和MICP
     
 .. c:function:: void gpadc_start(gpadc_signal_source_t gpadc_signal)
 
@@ -196,6 +196,12 @@ API说明
     :note: 需要在adc_irq_entry()中调用
 
 **使用**
+
+    3v计算公式 ：Vout = Vadc/4096*3.0
+
+    5v计算公式 ：Vout = Vadc/4096*12.0
+
+    其中 Vout表示测量的电压值，单位V（伏）  Vadc表示adc的采样值
 
 1. 调用gpadc_irq_clear_flag()清除有效数据pending
 2. 调用gpadc_start(gpadc_signal),采集指定信号源

@@ -56,7 +56,7 @@ EFUSE
 ----------------------
 
  1. EFUSE为一次性存储器，修改EFUSE内容需要谨慎进行。
- 2. EFUSE的bit0~bit159（\ `EFUSE_VALUE0`_\ ~\ `EFUSE_VALUE4`_\ ）用于芯片出厂信息设置，修改这些bit可能导致芯片工作异常，甚至无法使用。EFUSE的bit160~bit255（\ `EFUSE_VALUE5`_\ ~\ `EFUSE_VALUE7`_\ ）可用于存储用户自定义数据。
+ 2. EFUSE的bit0~bit215用于芯片出厂信息设置，修改这些bit可能导致芯片工作异常，甚至无法使用。EFUSE的bit216~bit255可用于存储用户自定义数据。
  3. \ `EFUSE_VALUE0`_\ ~\ `EFUSE_VALUE7`_\ 与EFUSE存储器的256bit数据对应关系如下：
 
   | \ `EFUSE_VALUE0`_\ 存放EFUSE存储器的bit0~bit31，且\ `EFUSE_VALUE0`_\ 的最低位存放EFUSE存储器的bit0；

@@ -72,7 +72,7 @@ API说明
   :retval  0: 钩子函数设置成功。
   :retval -1: 播放器不存在。
 
-.. c:function:: int32_t player_midi_set_finish_hook(void (*func)())
+.. c:function:: int32_t player_midi_set_end_hook(void (*func)())
 
   可选配钩子函数，配置后在曲目播放自然结束后触发调用。
 

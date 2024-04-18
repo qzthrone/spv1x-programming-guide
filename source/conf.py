@@ -9,7 +9,7 @@
 project = 'SPV1x用户编程手册'
 copyright = '2023 珠海普林芯驰科技有限公司'
 author = '珠海普林芯驰科技有限公司 软件部'
-release = '1.0.2-rc-SNAPSHOT'
+release = '1.2'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration

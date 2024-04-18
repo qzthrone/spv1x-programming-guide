@@ -3,5 +3,5 @@
 SPV1x 选型指南
 ======================
 
-.. image:: ../../_static/kiwi-pick-target.png
+.. image:: ../../_static/kiwi-family-tree.png
    :align: center

@@ -1,3 +1,5 @@
+.. _static-libs:
+
 场景库
 ======================
 
@@ -15,4 +17,5 @@
    ADPCM播放 <adpcm-player>
    录音机 <recorder>
    离线语音识别 <asr>
+   音效 <audio-effect>
    

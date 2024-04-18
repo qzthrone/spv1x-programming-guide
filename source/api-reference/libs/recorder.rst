@@ -1,3 +1,5 @@
+.. _recorder-lib:
+
 录音机
 =========================
 
@@ -14,12 +16,13 @@ SPV1x的录音库，提供音频录制和压缩存储功能。该录音库有如
 API说明
 -------------------------
 
-.. c:function:: uint32_t recorder_init(uint32_t flash_addr,uint32_t flash_size)
+.. c:function:: uint32_t recorder_init(uint32_t flash_addr,uint32_t flash_size,uint32_t kbps)
 
   录音库初始化。
 
   :param flash_addr: 用于保存录音数据的flash区域的起始地址。
   :param flash_size: 用于保存录音数据的flash区域的大小（单位：字节）。
+  :param kbps: 用于设置录音编码器的码率（比特率），支持的档位有16,24,32,40,48,56,64，单位为kbps。
   :returns: 录音库占用的SRAM大小(字节数)，该值用于评估项目内存使用情况。
 
 .. c:function:: void recorder_set_start_hook(void (*start)(void))
@@ -64,7 +67,7 @@ API说明
 
    :param pre_time_ms: 录音需要回溯的时间，0ms ≤ pre_time_ms ≤ 1000ms。
    :returns: 无
-   :note: 录音库在初始化后就开始缓存音频数据，最多缓存1秒的音频。如果在初始化录音库后立即开始录音，则没有音频数据可以回溯。
+   :note: 录音库在初始化后就开始缓存音频数据，在16kbps码率下，最多缓存1秒的音频，码率增大时，缓存的时间会线性缩短。如果在初始化录音库后立即开始录音，则没有音频数据可以回溯。
 
 .. c:function:: void recorder_stop(void)
 
@@ -87,7 +90,7 @@ API说明
 录音库使用方法
 -------------------------
 
- 1. 调用 `recorder_init()` 初始化录音功能需要用到的资源，并传入用于保存录音数据的flash区域参数。
+ 1. 调用 `recorder_init()` 初始化录音功能需要用到的资源，并传入用于保存录音数据的flash区域参数以及码率。
  2. 根据需求，设置对应的回调函数。未设置的回调函数默认为NULL，录音库会跳过对NULL回调函数的调用。
  3. 调用 `recorder_start()` 开始录音：SPV1x对ADC采集的音频数据进行编码压缩，然后写入flash。
     当指定长度的flash空间用尽后，SPV1x自动停止录音。

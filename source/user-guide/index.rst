@@ -15,3 +15,4 @@
    中断/异常/NMI处理 <trap-handling>
    低功耗模式配置和唤醒 <low-power-mode/low-power>
    基于外设的场景实现 <usage/peripheral-usage>
+   调试Flash应用程序 <debug-flash-app>

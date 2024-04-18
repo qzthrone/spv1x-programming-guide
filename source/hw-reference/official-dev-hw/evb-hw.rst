@@ -16,7 +16,7 @@ IR发射/接收模块、电机控制模块、RGB LED灯珠、AD Key、Keypad Mat
 
 SPV1x EVB原理图下载链接： 
 
- - :download:`svg格式 <../../_static/SCH_kiwi_evb.svg>`
+ - :download:`pdf格式 <../../_static/spv1x-evb.pdf>`
 
 .. note::
   1. 请留意图中标注的外设用途说明以及跳线连接方式（白色）。

@@ -8,4 +8,5 @@
 
    [SPV120A4][ESOP8]语音控制台灯 <120a4-esop8-tablelight>
    [SPV120A4][ESOP8]语音控制小夜灯 <120a4-esop8-nightlight>
-   [SPV100A4][ESOP8]音乐棒棒糖 <100a4-esop8-lollipop>
+   [SPV100A4][SOP8]音乐棒棒糖 <100a4-sop8-lolipop>
+

@@ -18,7 +18,7 @@
  - 低功耗RC振荡器产生的 32Khz 时钟信号： ``OSC_PMU``
  - 通过GPIO引脚输入的外部时钟信号： ``EXT_CLK``
 
-OSC_CORE时钟频率在出厂阶段进行校准，并将60-100MHz离散档位的校准值写入SoC Efuse，用户可以自行配置。关联API链接：
+OSC_CORE时钟频率在出厂阶段进行校准，并将离散档位的校准值写入SoC Efuse，用户可以自行配置。关联API链接：
 
  - :c:func:`clock_osc_core_set`
 
@@ -99,10 +99,7 @@ API说明
 
   OSC CORE时钟源频率设置枚举定义。
 
-   - *OSC_Core_Frequency_60MHz*：设置OSC CORE时钟源频率至60MHz。
-   - *OSC_Core_Frequency_70MHz*：设置OSC CORE时钟源频率至70MHz。
    - *OSC_Core_Frequency_80MHz*：设置OSC CORE时钟源频率至80MHz。
-   - *OSC_Core_Frequency_90MHz*：设置OSC CORE时钟源频率至90MHz。
    - *OSC_Core_Frequency_100MHz*：设置OSC CORE时钟源频率至100MHz。
 
 .. c:function:: void clock_osc_core_set(osc_core_frequency_t freq)
